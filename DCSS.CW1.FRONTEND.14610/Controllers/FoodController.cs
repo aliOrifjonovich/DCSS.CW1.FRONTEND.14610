@@ -50,7 +50,7 @@ namespace DCSS.CW1.FRONTEND._14610.Controllers
                 client.BaseAddress = new Uri(baseUrl);
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage response = await client.GetAsync($"/{id}");
+                HttpResponseMessage response = await client.GetAsync($"{baseUrl}/{id}");
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -106,7 +106,7 @@ namespace DCSS.CW1.FRONTEND._14610.Controllers
                 client.BaseAddress = new Uri(baseUrl);
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage response = await client.GetAsync($"/{id}");
+                HttpResponseMessage response = await client.GetAsync($"{baseUrl}/{id}");
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -137,7 +137,7 @@ namespace DCSS.CW1.FRONTEND._14610.Controllers
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 var content = new StringContent(JsonConvert.SerializeObject(food), Encoding.UTF8, "application/json");
-                HttpResponseMessage response = await client.PutAsync($"/{id}", content);
+                HttpResponseMessage response = await client.PutAsync($"{baseUrl}/{id}", content);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -161,7 +161,7 @@ namespace DCSS.CW1.FRONTEND._14610.Controllers
                 client.BaseAddress = new Uri(baseUrl);
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage response = await client.GetAsync($"/{id}");
+                HttpResponseMessage response = await client.GetAsync($"{baseUrl}/{id}");
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -178,7 +178,7 @@ namespace DCSS.CW1.FRONTEND._14610.Controllers
         }
 
         // POST: Food/Delete/5
-        [HttpPost]
+        [HttpPost, ActionName("Delete")]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
             using (var client = new HttpClient())
@@ -186,7 +186,7 @@ namespace DCSS.CW1.FRONTEND._14610.Controllers
                 client.BaseAddress = new Uri(baseUrl);
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage response = await client.DeleteAsync($"/{id}");
+                HttpResponseMessage response = await client.DeleteAsync($"{baseUrl}/{id}");
 
                 if (response.IsSuccessStatusCode)
                 {
