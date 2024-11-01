@@ -4,63 +4,65 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2 style="color: #333; text-align: center; font-weight: 600;">Details</h2>
 
-<div>
-    <h4>Food</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
+<div style="width: 60%; margin: 20px auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+    <h4 style="color: #4CAF50; font-weight: bold; border-bottom: 2px solid #4CAF50; padding-bottom: 5px;">Food</h4>
+    <hr style="border: none; border-top: 1px solid #ddd; margin-top: 10px; margin-bottom: 20px;" />
+
+    <dl style="display: flex; flex-direction: column; gap: 10px;">
+        <dt style="font-weight: bold; color: #333;">
             @Html.DisplayNameFor(model => model.Name)
         </dt>
-
-        <dd>
+        <dd style="margin: 0 0 10px 20px; color: #555;">
             @Html.DisplayFor(model => model.Name)
         </dd>
 
-        <dt>
+        <dt style="font-weight: bold; color: #333;">
             @Html.DisplayNameFor(model => model.Description)
         </dt>
-
-        <dd>
+        <dd style="margin: 0 0 10px 20px; color: #555;">
             @Html.DisplayFor(model => model.Description)
         </dd>
 
-        <dt>
+        <dt style="font-weight: bold; color: #333;">
             @Html.DisplayNameFor(model => model.Price)
         </dt>
-
-        <dd>
+        <dd style="margin: 0 0 10px 20px; color: #555;">
             @Html.DisplayFor(model => model.Price)
         </dd>
 
-        <dt>
+        <dt style="font-weight: bold; color: #333;">
             @Html.DisplayNameFor(model => model.Calories)
         </dt>
-
-        <dd>
+        <dd style="margin: 0 0 10px 20px; color: #555;">
             @Html.DisplayFor(model => model.Calories)
         </dd>
 
-        <dt>
+        <dt style="font-weight: bold; color: #333;">
             @Html.DisplayNameFor(model => model.IsVegetarian)
         </dt>
-
-        <dd>
+        <dd style="margin: 0 0 10px 20px; color: #555;">
             @Html.DisplayFor(model => model.IsVegetarian)
         </dd>
 
-        <dt>
+        <dt style="font-weight: bold; color: #333;">
             @Html.DisplayNameFor(model => model.CategoryId)
         </dt>
-
-        <dd>
+        <dd style="margin: 0 0 10px 20px; color: #555;">
             @Html.DisplayFor(model => model.CategoryId)
         </dd>
-
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+
+<p style="text-align: center; margin-top: 20px;">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new
+    {
+        style = "display: inline-block; padding: 10px 20px; background-color: #4CAF50; color: white; border-radius: 4px; font-weight: bold; text-decoration: none; margin-right: 10px;"
+    })
+    |
+    @Html.ActionLink("Back to List", "Index", null, new
+    {
+        style = "display: inline-block; padding: 10px 20px; background-color: #333; color: white; border-radius: 4px; font-weight: bold; text-decoration: none; text-transform: uppercase; margin-left: 10px;"
+    })
 </p>

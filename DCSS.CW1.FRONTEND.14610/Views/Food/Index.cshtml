@@ -4,58 +4,74 @@
     ViewBag.Title = "Index";
 }
 
-<p>
-    @Html.ActionLink("Create New", "Create")
+<h2 style="color: #333; text-align: center; font-weight: 600;">Food List</h2>
+
+<p style="text-align: center; margin-top: 20px;">
+    @Html.ActionLink("Create New", "Create", null, new
+    {
+        style = "display: inline-block; padding: 10px 20px; background-color: #4CAF50; color: white; border-radius: 4px; font-weight: bold; text-transform: uppercase; text-decoration: none;"
+    })
 </p>
-<table class="table">
+
+<table style="width: 90%; margin: 20px auto; border-collapse: collapse; background-color: #fff; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); border-radius: 5px;">
     <tr>
-        <th>
+        <th style="padding: 12px 15px; border-bottom: 1px solid #ddd; text-align: left; background-color: #4CAF50; color: white; font-weight: 700; text-transform: uppercase;">
             @Html.DisplayNameFor(model => model.Name)
         </th>
-        <th>
+        <th style="padding: 12px 15px; border-bottom: 1px solid #ddd; text-align: left; background-color: #4CAF50; color: white; font-weight: 700; text-transform: uppercase;">
             @Html.DisplayNameFor(model => model.Description)
         </th>
-        <th>
+        <th style="padding: 12px 15px; border-bottom: 1px solid #ddd; text-align: left; background-color: #4CAF50; color: white; font-weight: 700; text-transform: uppercase;">
             @Html.DisplayNameFor(model => model.Price)
         </th>
-        <th>
+        <th style="padding: 12px 15px; border-bottom: 1px solid #ddd; text-align: left; background-color: #4CAF50; color: white; font-weight: 700; text-transform: uppercase;">
             @Html.DisplayNameFor(model => model.Calories)
         </th>
-        <th>
+        <th style="padding: 12px 15px; border-bottom: 1px solid #ddd; text-align: left; background-color: #4CAF50; color: white; font-weight: 700; text-transform: uppercase;">
             @Html.DisplayNameFor(model => model.IsVegetarian)
         </th>
-        <th>
+        <th style="padding: 12px 15px; border-bottom: 1px solid #ddd; text-align: left; background-color: #4CAF50; color: white; font-weight: 700; text-transform: uppercase;">
             @Html.DisplayNameFor(model => model.CategoryId)
         </th>
-        <th></th>
+        <th style="padding: 12px 15px; border-bottom: 1px solid #ddd; text-align: left; background-color: #4CAF50; color: white; font-weight: 700; text-transform: uppercase;"></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Calories)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsVegetarian)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CategoryId)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr style="transition: background-color 0.3s ease;">
+            <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">
+                @Html.DisplayFor(modelItem => item.Calories)
+            </td>
+            <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">
+                @Html.DisplayFor(modelItem => item.IsVegetarian)
+            </td>
+            <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">
+                @Html.DisplayFor(modelItem => item.CategoryId)
+            </td>
+            <td style="padding: 12px 15px; border-bottom: 1px solid #ddd; text-align: center;">
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new
+                {
+                    style = "color: #007bff; text-decoration: none; margin-right: 5px; font-weight: 500;"
+                }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }, new
+                {
+                    style = "color: #007bff; text-decoration: none; margin-right: 5px; font-weight: 500;"
+                }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new
+                {
+                    style = "color: #d9534f; text-decoration: none; font-weight: 500;"
+                })
+            </td>
+        </tr>
+    }
 
 </table>

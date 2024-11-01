@@ -1,0 +1,46 @@
+﻿@model DCSS.CW1.FRONTEND._14610.Models.Category
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2 style="color: #333; text-align: center; font-weight: 600;">Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div style="width: 60%; margin: 20px auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+        <h4 style="color: #4CAF50; font-weight: bold; border-bottom: 2px solid #4CAF50; padding-bottom: 5px;">Category</h4>
+        <hr style="border: none; border-top: 1px solid #ddd; margin-top: 10px; margin-bottom: 20px;" />
+
+        @Html.ValidationSummary(true, "", new { @style = "color: red; font-weight: bold;" })
+
+        <div style="margin-bottom: 15px;">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @style = "display: block; font-weight: bold; color: #333; margin-bottom: 5px;" })
+            <div>
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @style = "width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @style = "color: red; font-weight: bold; margin-top: 5px;" })
+            </div>
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            @Html.LabelFor(model => model.Description, htmlAttributes: new { @style = "display: block; font-weight: bold; color: #333; margin-bottom: 5px;" })
+            <div>
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @style = "width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" } })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @style = "color: red; font-weight: bold; margin-top: 5px;" })
+            </div>
+        </div>
+
+        <div style="text-align: right;">
+            <input type="submit" value="Create" style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; transition: background-color 0.3s ease;" />
+        </div>
+    </div>
+}
+
+<div style="text-align: center; margin-top: 20px;">
+    @Html.ActionLink("Back to List", "Index", null, new
+    {
+        @style = "display: inline-block; padding: 8px 16px; background-color: #333; color: white; border-radius: 4px; font-weight: bold; text-decoration: none; text-transform: uppercase;"
+    })
+</div>

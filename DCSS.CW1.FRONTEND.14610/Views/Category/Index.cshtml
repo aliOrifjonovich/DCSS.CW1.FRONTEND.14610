@@ -1,0 +1,56 @@
+﻿@model IEnumerable<DCSS.CW1.FRONTEND._14610.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="color: #333; text-align: center; margin-top: 20px; font-weight: 600;">Category List</h2>
+
+<p  style="text-align: center; margin-top: 20px;">
+    @Html.ActionLink("Create New", "Create", null, new
+{
+    style = "display: inline-block; padding: 8px 16px; background-color: #4CAF50; color: white; border-radius: 4px; font-weight: bold; text-transform: uppercase; transition: background-color 0.3s ease; margin: 20px auto; text-align: center; text-decoration: none;"
+})
+</p>
+
+<table class="table" style="width: 80%; margin: 20px auto; border-collapse: collapse; background-color: #fff; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); border-radius: 5px;">
+    <tr>
+        <th style="padding: 12px 15px; border-bottom: 1px solid #ddd; text-align: left; background-color: #4CAF50; color: white; font-weight: 700; text-transform: uppercase;">
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th style="padding: 12px 15px; border-bottom: 1px solid #ddd; text-align: left; background-color: #4CAF50; color: white; font-weight: 700; text-transform: uppercase;">
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th style="padding: 12px 15px; border-bottom: 1px solid #ddd; text-align: left; background-color: #4CAF50; color: white; font-weight: 700; text-transform: uppercase;">Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr style="transition: background-color 0.3s ease;">
+            <td style="padding: 12px 15px; border-bottom: 1px solid #ddd; text-align: left;">
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td style="padding: 12px 15px; border-bottom: 1px solid #ddd; text-align: left;">
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td style="padding: 12px 15px; border-bottom: 1px solid #ddd; text-align: left;">
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new
+                {
+                    @class = "action-link",
+                    style = "margin-right: 8px; color: #007bff; font-weight: 500; text-decoration: none; transition: color 0.3s ease;"
+                }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }, new
+                {
+                    @class = "action-link",
+                    style = "margin-right: 8px; color: #007bff; font-weight: 500; text-decoration: none; transition: color 0.3s ease;"
+                }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new
+                {
+                    @class = "action-link",
+                    style = "color: #007bff; font-weight: 500; text-decoration: none; transition: color 0.3s ease;"
+                })
+            </td>
+        </tr>
+    }
+
+</table>

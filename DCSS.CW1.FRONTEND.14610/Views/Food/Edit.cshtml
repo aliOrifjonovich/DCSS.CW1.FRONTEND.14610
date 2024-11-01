@@ -4,76 +4,76 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<h2 style="color: #333; text-align: center; font-weight: 600;">Edit</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Food</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div style="width: 60%; margin: 20px auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+        <h4 style="color: #4CAF50; font-weight: bold; border-bottom: 2px solid #4CAF50; padding-bottom: 5px;">Food</h4>
+        <hr style="border: none; border-top: 1px solid #ddd; margin-top: 10px; margin-bottom: 20px;" />
+
+        @Html.ValidationSummary(true, "", new { @style = "color: red; font-weight: bold;" })
         @Html.HiddenFor(model => model.Id)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        <div style="margin-bottom: 15px;">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @style = "display: block; font-weight: bold; color: #333; margin-bottom: 5px;" })
+            <div>
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @style = "width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @style = "color: red; font-weight: bold; margin-top: 5px;" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+        <div style="margin-bottom: 15px;">
+            @Html.LabelFor(model => model.Description, htmlAttributes: new { @style = "display: block; font-weight: bold; color: #333; margin-bottom: 5px;" })
+            <div>
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @style = "width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" } })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @style = "color: red; font-weight: bold; margin-top: 5px;" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+        <div style="margin-bottom: 15px;">
+            @Html.LabelFor(model => model.Price, htmlAttributes: new { @style = "display: block; font-weight: bold; color: #333; margin-bottom: 5px;" })
+            <div>
+                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @style = "width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" } })
+                @Html.ValidationMessageFor(model => model.Price, "", new { @style = "color: red; font-weight: bold; margin-top: 5px;" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Calories, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Calories, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Calories, "", new { @class = "text-danger" })
+        <div style="margin-bottom: 15px;">
+            @Html.LabelFor(model => model.Calories, htmlAttributes: new { @style = "display: block; font-weight: bold; color: #333; margin-bottom: 5px;" })
+            <div>
+                @Html.EditorFor(model => model.Calories, new { htmlAttributes = new { @style = "width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" } })
+                @Html.ValidationMessageFor(model => model.Calories, "", new { @style = "color: red; font-weight: bold; margin-top: 5px;" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.IsVegetarian, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.IsVegetarian)
-                    @Html.ValidationMessageFor(model => model.IsVegetarian, "", new { @class = "text-danger" })
-                </div>
+        <div style="margin-bottom: 15px;">
+            @Html.LabelFor(model => model.IsVegetarian, htmlAttributes: new { @style = "display: block; font-weight: bold; color: #333; margin-bottom: 5px;" })
+            <div style="display: flex; align-items: center; gap: 5px;">
+                @Html.EditorFor(model => model.IsVegetarian, new { htmlAttributes = new { @style = "transform: scale(1.2);" } })
+                @Html.ValidationMessageFor(model => model.IsVegetarian, "", new { @style = "color: red; font-weight: bold; margin-top: 5px;" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.CategoryId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CategoryId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
+        <div style="margin-bottom: 15px;">
+            @Html.LabelFor(model => model.CategoryId, htmlAttributes: new { @style = "display: block; font-weight: bold; color: #333; margin-bottom: 5px;" })
+            <div>
+                @Html.EditorFor(model => model.CategoryId, new { htmlAttributes = new { @style = "width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" } })
+                @Html.ValidationMessageFor(model => model.CategoryId, "", new { @style = "color: red; font-weight: bold; margin-top: 5px;" })
             </div>
         </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
+        <div style="text-align: right;">
+            <input type="submit" value="Save" style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; transition: background-color 0.3s ease;" />
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+<div style="text-align: center; margin-top: 20px;">
+    @Html.ActionLink("Back to List", "Index", null, new
+    {
+        @style = "display: inline-block; padding: 8px 16px; background-color: #333; color: white; border-radius: 4px; font-weight: bold; text-decoration: none; text-transform: uppercase;"
+    })
 </div>
